@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initializePage()">
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <div style="text-align: right;"></div>
+        <img src="path/to/your/photo.jpg" alt="My Photo" style="width: 200px; height: auto;">
+    </div>
+    <section id="aboutme" aria-labelledby="aboutme-heading">
+        <h2 id="aboutme-heading">About Me</h2>
+        <p>Hello! I am Sneha Sajeev, a passionate developer with expertise in various technologies. I love creating innovative solutions and learning new skills.</p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+        </ul>
+    </section>
+    
+    <section id="project-card" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <ul>
+            <li>Project 1: Description of project 1.</li>
+            <li>Project 2: Description of project 2.</li>
+            <li>Project 3: Description of project 3.</li>
+        </ul>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <form class="contact-form" aria-label="Contact Form" onsubmit="return validateForm()"></form>
+           <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+           <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+            
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+            <button id="contact-form"type="submit">Send</button>
+        </form>
+    </section>
+    
+</body>
+</html>
