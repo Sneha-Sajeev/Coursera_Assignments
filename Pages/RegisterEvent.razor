@@ -1,0 +1,39 @@
+@page "/register"
+@using EventEaseApplication.Models;
+@using EventEaseApplication.Services;
+@inject EventServices EventServices;
+<PageTitle>Register Events</PageTitle>
+<h1>Register Events</h1>
+<EditForm Model="@eve" OnValidSubmit="HandleValidSubmit">
+<DataAnnotationsValidator />
+<ValidationSummary />
+<div>
+    <label for="name">Enter Name of event: </label>
+    <InputText id="name" @bind-Value="eve.Name" class="form-control"/>
+</div>
+<div>
+    <label for="place">Enter place of event: </label>
+   <InputText id="place" @bind-Value="eve.Place" class="form-control"/>
+</div>
+<div>
+    <label for="date">Enter date of event: </label>
+    <InputText id="date" @bind-Value="eve.Date" class="form-control"/>
+</div>
+<div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</EditForm>
+
+@if(isSubmitted)
+{
+    <p>Events submitted.Thank you!!</p>
+}
+
+@code{
+    public EventDetails eve=new EventDetails();
+    private bool isSubmitted = false;
+    public void HandleValidSubmit(){
+        EventServices.AddEvent(eve);
+        isSubmitted=true;
+    }
+}

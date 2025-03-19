@@ -1,0 +1,29 @@
+@page "/events"
+@using EventEaseApplication.Models;
+@using EventEaseApplication.Services;
+@inject EventServices EventServices;
+<div>
+    <table class="table">
+        <thead>
+            <td>Event Name</td>
+            <td>Event Place</td>
+            <td>Event Date</td>
+        </thead>
+        <tbody>
+        @foreach(var event1 in EventServices.GetAllEvents())
+        {
+            <tr>
+                <td>@event1.Name</td>
+                <td>@event1.Place</td>
+                <td>@event1.Date</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+<style>
+    .table{
+        border: 1cm;
+        
+    }
+</style>
